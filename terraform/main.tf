@@ -25,3 +25,9 @@ source       = "./modules/dynamodb"
   hash_key     = "id"
   hash_key_type = "S"
 }
+
+module "EC2_Instances" {
+  source          = "./modules/servers"
+  public_subnets  = module.vpc.public_subnets_ids
+  security_group_ids = module.security.security_group_ids
+}
