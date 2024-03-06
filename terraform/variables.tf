@@ -16,3 +16,4 @@ variable "azs" {
 variable "ami" {
   type = string
 }
+
