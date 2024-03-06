@@ -12,3 +12,7 @@ variable "azs" {
   type        = list(string)
   description = "A list of the Availability Zones you wish to provision infrastructure in"
 }
+
+variable "ami" {
+  type = string
+}
