@@ -98,7 +98,7 @@ resource "aws_lb_target_group_attachment" "auth_attachment" {
 }
 
 
-# rules(deleted for now): 
+# rules: 
 
 resource "aws_lb_listener_rule" "public_lb_routing_lighting" {
   listener_arn = aws_lb_listener.public_lb_listener.arn
