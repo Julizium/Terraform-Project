@@ -6,3 +6,7 @@ output "aws_instance_ids" {
     aws_instance.auth_instance.id
     ]
 }
+
+output "auth_instance_private_ip" {
+  value = aws_instance.auth_instance.private_ip
+}

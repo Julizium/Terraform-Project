@@ -13,3 +13,6 @@ variable "azs" {
     description = "A list of the Availability Zones you wish to provision infrastructure in"
     
 }
+variable "security_group_ids" {
+  type = list(string)
+}
