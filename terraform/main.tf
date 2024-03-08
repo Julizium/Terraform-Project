@@ -28,6 +28,14 @@ source       = "./modules/dynamodb"
   hash_key_type = "N"
 }
 
+module "auth_dynamodb" {
+source       = "./modules/dynamodb"
+  table_name   = "Auth"
+  hash_key     = "id"
+  hash_key_type = "N"
+}
+
+
 module "servers" {
   source          = "./modules/servers"
   public_subnets  = module.vpc.public_subnets_ids
@@ -45,7 +53,7 @@ module "load-balancers" {
   aws_instance_ids             = module.servers.aws_instance_ids
 }
 
-# autoscaling
+# autoscaling (AMI created via console AWS)
 
 module "autoscaling-lighting" {
   source               = "./modules/autoscaling"
