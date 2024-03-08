@@ -54,46 +54,45 @@ module "load-balancers" {
 }
 
 # autoscaling (AMI created via console AWS)
-# dont need them now, so will comment out
 
-# module "autoscaling-lighting" {
-#   source               = "./modules/autoscaling"
-#   asg_name             = "lighting-asg"
-#   template_name = "lighting-template"
-#   subnet_ids = module.vpc.public_subnets_ids
-#   target_group_arn     = module.load-balancers.target_groups_arn[0]
-#   image_id = "ami-0e5f882be1900e43b"
+module "autoscaling-lighting" {
+  source               = "./modules/autoscaling"
+  asg_name             = "lighting-asg"
+  template_name = "lighting-template"
+  subnet_ids = module.vpc.public_subnets_ids
+  target_group_arn     = module.load-balancers.target_groups_arn[0]
+  image_id = "ami-0e5f882be1900e43b"
 
-#   security_group_ids = module.security.security_group_ids
-#   }
+  security_group_ids = module.security.security_group_ids
+  }
 
-#   module "autoscaling-heating" {
-#   source               = "./modules/autoscaling"
-#   asg_name             = "heating-asg"
-#   template_name = "heating-template"
-#   subnet_ids = module.vpc.public_subnets_ids
-#   target_group_arn     = module.load-balancers.target_groups_arn[3]
-#   image_id = "ami-07b108fd814778f00"
-#   security_group_ids = module.security.security_group_ids
-#   }
+  module "autoscaling-heating" {
+  source               = "./modules/autoscaling"
+  asg_name             = "heating-asg"
+  template_name = "heating-template"
+  subnet_ids = module.vpc.public_subnets_ids
+  target_group_arn     = module.load-balancers.target_groups_arn[3]
+  image_id = "ami-07b108fd814778f00"
+  security_group_ids = module.security.security_group_ids
+  }
 
-#   module "autoscaling-status" {
-#   source               = "./modules/autoscaling"
-#   asg_name             = "status-asg"
-#   template_name = "status-template"
-#   subnet_ids = module.vpc.public_subnets_ids
-#   target_group_arn     = module.load-balancers.target_groups_arn[1]
-#   image_id = "ami-03e22e98884ea75d1"
-#   security_group_ids = module.security.security_group_ids
-#   }
+  module "autoscaling-status" {
+  source               = "./modules/autoscaling"
+  asg_name             = "status-asg"
+  template_name = "status-template"
+  subnet_ids = module.vpc.public_subnets_ids
+  target_group_arn     = module.load-balancers.target_groups_arn[1]
+  image_id = "ami-03e22e98884ea75d1"
+  security_group_ids = module.security.security_group_ids
+  }
 
-#   module "autoscaling-auth" {
-#   source               = "./modules/autoscaling"
-#   asg_name             = "auth-asg"
-#   template_name = "auth-template"
-#   subnet_ids = module.vpc.public_subnets_ids
-#   target_group_arn     = module.load-balancers.target_groups_arn[2]
-#   image_id = "ami-0b21a306f6c22e3c4"
-#   security_group_ids = module.security.security_group_ids
-#   }
+  module "autoscaling-auth" {
+  source               = "./modules/autoscaling"
+  asg_name             = "auth-asg"
+  template_name = "auth-template"
+  subnet_ids = module.vpc.public_subnets_ids
+  target_group_arn     = module.load-balancers.target_groups_arn[2]
+  image_id = "ami-0b21a306f6c22e3c4"
+  security_group_ids = module.security.security_group_ids
+  }
 
