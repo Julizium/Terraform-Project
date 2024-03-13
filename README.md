@@ -1,8 +1,10 @@
 # Terraform project
 
-The target for this project is to create a hosted network of microservices that mocks a smart home network with; a central status service, a lighting service, heating service, and authorisation service.
+The target for this project is to create a hosted network of microservices that mocks a smart home network with; a central status service, a lighting service, heating service, and authorization service.
 
-# Plan
+# Tasks:
+
+Planning 
 
 VPC
 
@@ -19,3 +21,5 @@ Services
 Load Balancers
 
 Autoscaling
+
+Testing
